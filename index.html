@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il nostro amore e l'universo sopra noi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, gold 1px, transparent 1px),
+                  linear-gradient(to bottom, #2c003e, #590d82);
+      background-size: 100px 100px;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      animation: starfield 8s linear infinite;
+    }
+
+    @keyframes starfield {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    header h1 {
+      color: #ffccff;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+
+    header p {
+      font-size: 1.3em;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    button {
+      background: #ff66cc;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 20px;
+      margin-top: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff33aa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Il nostro amore e<br>l'universo sopra noi 💫</h1>
+    <p>Ciao amore, questo sito è solamente per te, spero che ti rimarrà impresso per sempre.</p>
+    <p>✨ “Con te ogni giorno è il mio preferito.”<br>
+       🌙 “Abbiamo l’universo negli occhi e l’amore nel cuore.”<br>
+       💫 “Ogni istante con te è una costellazione di emozioni.”</p>
+    <button onclick="document.getElementById('loveMessage').style.display='block'; this.style.display='none'">Apri i nostri ricordi 💖</button>
+    <p id="loveMessage" style="display:none; margin-top:20px;">Eccoli qui: ogni ricordo con te è una stella che splende 🌟</p>
+  </header>
+</body>
+</html>

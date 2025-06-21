@@ -6,33 +6,168 @@
   <title>Il nostro amore e l'universo sopra noi</title>
   <style>
     body {
-      background: linear-gradient(to right, #7b2cbf, #9d4edd);
-      color: white;
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 50px;
+      background-color: #4b0082;
+      color: #f3e5f5;
+      overflow-x: hidden;
+      background: #4b0082 radial-gradient(circle, gold 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: starfield 60s linear infinite;
     }
-    h1 {
-      font-size: 2.5em;
+
+    @keyframes starfield {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #ffffff;
       margin-bottom: 10px;
     }
-    p {
+
+    header p {
+      font-size: 1.3em;
+      color: #e1bee7;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .phrases {
+      text-align: center;
+      margin-top: 50px;
+      padding: 0 20px;
+    }
+
+    .phrases p {
       font-size: 1.2em;
+      margin: 10px 0;
+      color: #f8bbd0;
     }
-    .heart {
-      font-size: 3em;
-      animation: pulse 1s infinite;
+
+    .button-container {
+      text-align: center;
+      margin: 60px 0;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+
+    .button {
+      background-color: #ba68c8;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .gallery-page {
+      display: none;
+      padding: 60px 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .letter {
+      display: none;
+      background: white;
+      border-left: 6px solid #ce93d8;
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #333;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <div class="heart">💜</div>
-  <h1>Il nostro amore e l'universo sopra noi</h1>
-  <p>Per Valeria, la costellazione più luminosa del mio cielo.</p>
+  <audio autoplay loop>
+    <source src="/music/the-first-time-damiano-david.mp3" type="audio/mpeg">
+    Il tuo browser non supporta l'audio HTML5.
+  </audio>
+
+  <div id="home">
+    <header>
+      <h1>Il nostro amore e l'universo sopra noi 💫</h1>
+      <p>Ciao amore, questo sito è solamente per te, spero che ti rimarrà impresso per sempre.</p>
+    </header>
+
+    <div class="phrases">
+      <p>✨ "Con te ogni giorno è il mio preferito."</p>
+      <p>🌙 "Abbiamo l’universo negli occhi e l’amore nel cuore."</p>
+      <p>💫 "Ogni istante con te è una costellazione di emozioni."</p>
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="openGalleryPage()">📸 Apri i nostri ricordi</button>
+    </div>
+  </div>
+
+  <div id="galleryPage" class="gallery-page">
+    <h2 style="text-align:center; color:#f3e5f5; font-size:2em; margin-bottom:30px;">I nostri ricordi</h2>
+    <div class="gallery-grid">
+      <img src="/images/DSC01345.JPG" alt="Ricordo 1">
+      <img src="/images/DSC01347.JPG" alt="Ricordo 2">
+      <img src="/images/DSC01348.JPG" alt="Ricordo 3">
+      <img src="/images/DSC01350.JPG" alt="Ricordo 4">
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="clickToRevealLetter(this)">💖 Apri il mio cuore</button>
+      <p id="heartMessage" style="margin-top: 10px; color: #f3e5f5;"></p>
+    </div>
+
+    <div class="letter" id="loveLetter">
+      <h2 style="color:#8e24aa;">💌 La Mia Lettera per Te</h2>
+      <p>Ciao, amore. Ti voglio scrivere questa lettera, anzi, ti voglio dedicare questo sito per farti ricordare che qualsiasi momento abbiamo passato insieme è stato il migliore che si sia mai provato. E ti spendo queste parole perché voglio farti capire che voglio veramente qualcosa di più oltre il fidanzamento e vorrei veramente andare avanti con te per tutta la vita. E questo deve essere un ricordo per te per il fatto che tu sei ciò che mi rende felice, tu sei ciò che mi fa emozionare, tu sei tutto quello che ho, e sei tutto ciò che può essere bello in questo mondo. Tu mi hai trasformato il mondo in una maniera incredibile e ti amo tanto, amore. Spero che non ti stancherai mai di me e del mio amore, ma io, sinceramente, non so come sperimenterò e vorrei farlo in qualsiasi modo sia possibile.</p>
+    </div>
+  </div>
+
+  <script>
+    function openGalleryPage() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('galleryPage').style.display = 'block';
+    }
+
+    let clickCount = 0;
+    const messages = [
+      "💖 Apri il mio cuore",
+      "✨ Noi due siamo l'universo",
+      "🌌 Nulla ci può fermare",
+      "💌 Ti scrivo col cuore"
+    ];
+
+    function clickToRevealLetter(button) {
+      clickCount++;
+      if (clickCount >= 4) {
+        document.getElementById('loveLetter').style.display = 'block';
+        button.style.display = 'none';
+        document.getElementById('heartMessage').textContent = '';
+      } else {
+        button.textContent = messages[clickCount];
+        document.getElementById('heartMessage').textContent = '';
+      }
+    }
+  </script>
 </body>
 </html>

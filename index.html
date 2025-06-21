@@ -2,175 +2,70 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il nostro amore e l'universo sopra noi</title>
+  <title>Il nostro amore e l’universo sopra noi</title>
   <style>
     body {
+      background: #45007e;
+      color: white;
+      font-family: 'Verdana', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #4b0082;
-      color: #f3e5f5;
-      overflow-x: hidden;
-      background: #4b0082 radial-gradient(circle, gold 1px, transparent 1px);
-      background-size: 30px 30px;
-      animation: starfield 60s linear infinite;
+      padding: 0;
     }
 
-    @keyframes starfield {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
-    }
-
-    header {
+    h1 {
       text-align: center;
-      padding: 80px 20px 20px;
+      margin-top: 2rem;
     }
 
-    header h1 {
-      font-size: 3em;
-      color: #ffffff;
-      margin-bottom: 10px;
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem;
     }
 
-    header p {
-      font-size: 1.3em;
-      color: #e1bee7;
+    .gallery img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px black;
+    }
+
+    .lettera {
       max-width: 600px;
       margin: auto;
-    }
-
-    .phrases {
-      text-align: center;
-      margin-top: 50px;
-      padding: 0 20px;
-    }
-
-    .phrases p {
-      font-size: 1.2em;
-      margin: 10px 0;
-      color: #f8bbd0;
-    }
-
-    .button-container {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .button {
-      background-color: #ba68c8;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.2em;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .gallery-page {
-      display: none;
-      padding: 60px 20px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .letter {
-      display: none;
       background: white;
-      border-left: 6px solid #ce93d8;
-      padding: 30px;
-      margin: 40px auto;
-      border-radius: 12px;
-      max-width: 700px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: #333;
-      font-style: italic;
+      color: #45007e;
+      padding: 2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      box-shadow: 0 0 20px black;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="/music/the-first-time-damiano-david.mp3" type="audio/mpeg">
-    Il tuo browser non supporta l'audio HTML5.
-  </audio>
+  <h1>I nostri ricordi</h1>
 
-  <div id="home">
-    <header>
-      <h1>Il nostro amore e l'universo sopra noi 💫</h1>
-      <p>Ciao amore, questo sito è solamente per te, spero che ti rimarrà impresso per sempre.</p>
-    </header>
-
-    <div class="phrases">
-      <p>✨ "Con te ogni giorno è il mio preferito."</p>
-      <p>🌙 "Abbiamo l’universo negli occhi e l’amore nel cuore."</p>
-      <p>💫 "Ogni istante con te è una costellazione di emozioni."</p>
-    </div>
-
-    <div class="button-container">
-      <button class="button" onclick="openGalleryPage()">📸 Apri i nostri ricordi</button>
-    </div>
+  <div class="gallery">
+    <img src="/valeria-magio-sito/images/DSC01327.JPG" alt="Ricordo 1" />
+    <img src="/valeria-magio-sito/images/DSC01335.JPG" alt="Ricordo 2" />
+    <img src="/valeria-magio-sito/images/DSC01350.JPG" alt="Ricordo 3" />
+    <img src="/valeria-magio-sito/images/DSC01358.JPG" alt="Ricordo 4" />
   </div>
 
-  <div id="galleryPage" class="gallery-page">
-    <h2 style="text-align:center; color:#f3e5f5; font-size:2em; margin-bottom:30px;">I nostri ricordi</h2>
-    <div class="gallery-grid">
-    <img src="/valeria-magio-sito/images/DSC01327.JPG" />
-<img src="/valeria-magio-sito/images/DSC01335.JPG" />
-<img src="/valeria-magio-sito/images/DSC01350.JPG" />
-<img src="/valeria-magio-sito/images/DSC01358.JPG" />
-
-<audio src="/valeria-magio-sito/music/the_first_time.mp3" autoplay loop preload="auto"></audio>
-
-    </div>
-
-    <div class="button-container">
-      <button class="button" onclick="clickToRevealLetter(this)">💖 Apri il mio cuore</button>
-      <p id="heartMessage" style="margin-top: 10px; color: #f3e5f5;"></p>
-    </div>
-
-    <div class="letter" id="loveLetter">
-      <h2 style="color:#8e24aa;">💌 La Mia Lettera per Te</h2>
-      <p>Ciao, amore. Ti voglio scrivere questa lettera, anzi, ti voglio dedicare questo sito per farti ricordare che qualsiasi momento abbiamo passato insieme è stato il migliore che si sia mai provato. E ti spendo queste parole perché voglio farti capire che voglio veramente qualcosa di più oltre il fidanzamento e vorrei veramente andare avanti con te per tutta la vita. E questo deve essere un ricordo per te per il fatto che tu sei ciò che mi rende felice, tu sei ciò che mi fa emozionare, tu sei tutto quello che ho, e sei tutto ciò che può essere bello in questo mondo. Tu mi hai trasformato il mondo in una maniera incredibile e ti amo tanto, amore. Spero che non ti stancherai mai di me e del mio amore, ma io, sinceramente, non so come ma vorrei farti felice in qualsiasi modo.</p>
-    </div>
+  <div class="lettera">
+    <h3>💌 La Mia Lettera per Te</h3>
+    <p>
+      Ciao, amore. Ti voglio scrivere questa lettera, anzi, voglio dedicare questo sito per farti ricordare che qualsiasi
+      momento abbiamo passato insieme è stato il migliore che si sia mai provato. E ti scrivo queste parole perché voglio
+      farti capire veramente quanto di più oltre il fidanzamento ti vorrei veramente portare con me per tutta la vita. E
+      questo deve essere un ricordo per te e per il fatto che tu sei ciò che mi fa emozionare, tu sei tutto quello che ho,
+      sei tutto ciò che può essere bello in questo mondo. Tu hai trasformato il mondo in una maniera incredibile e ti amo
+      tanto, amore. Io non mi stancherò mai di dirtelo e dell’idea di amarti, ma io, sinceramente, non so come mai tu riesci
+      a farmi felice in qualsiasi modo.
+    </p>
   </div>
 
-  <script>
-    function openGalleryPage() {
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('galleryPage').style.display = 'block';
-    }
-
-    let clickCount = 0;
-    const messages = [
-      "💖 Apri il mio cuore",
-      "✨ Noi due siamo l'universo",
-      "🌌 Nulla ci può fermare",
-      "💌 Ti scrivo col cuore"
-    ];
-
-    function clickToRevealLetter(button) {
-      clickCount++;
-      if (clickCount >= 4) {
-        document.getElementById('loveLetter').style.display = 'block';
-        button.style.display = 'none';
-        document.getElementById('heartMessage').textContent = '';
-      } else {
-        button.textContent = messages[clickCount];
-        document.getElementById('heartMessage').textContent = '';
-      }
-    }
-  </script>
+  <audio src="/valeria-magio-sito/music/the_first_time.mp3" autoplay loop preload="auto"></audio>
 </body>
 </html>
